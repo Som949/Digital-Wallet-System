@@ -1,7 +1,8 @@
 # 🏦 Digital-Wallet-System
 
-A secure database-driven Digital Wallet System built using **PHP and MySQL**.  
-This project simulates real-world wallet operations and demonstrates core **DBMS concepts** including normalization, relational schema design, ACID transactions, and role-based access control.
+The **Digital Wallet System** is a secure, database-driven application built using **Node.js, Express, and MySQL**.  
+
+This project simulates real-world wallet operations and demonstrates core **DBMS concepts** including relational schema design, normalization, ACID transactions, and role-based access control.
 
 ---
 
@@ -28,15 +29,15 @@ Admin users can:
 ## 🛠 Technologies Used
 
 ### 🌐 Frontend
-- HTML5 – Structure of web pages
-- CSS3 – Styling and layout
-- Bootstrap – Responsive design
-- JavaScript – Client-side validation
+- HTML5 – Structure of web pages  
+- CSS3 – Styling and layout  
+- Bootstrap – Responsive design  
+- JavaScript (Fetch API) – Client-side validation and API calls  
 
 ### 🖥 Backend
-- PHP – Server-side scripting and business logic
-- MySQL – Relational database management system
-- XAMPP – Local development environment
+- Node.js – JavaScript runtime environment  
+- Express.js – Backend framework for building REST APIs  
+- MySQL2 – Database connectivity package  
 
 ---
 
@@ -50,7 +51,7 @@ Admin users can:
 - Unique Wallet ID Generation
 
 ### 🔹 Layer 2: Wallet & Balance Management
-- Auto Wallet Creation
+- Automatic Wallet Creation  
 - Add Money
 - Withdraw Money
 - Transfer Money
