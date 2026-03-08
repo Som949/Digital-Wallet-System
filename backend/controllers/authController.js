@@ -2,7 +2,54 @@ import bcrypt from "bcrypt";
 import { db } from "../config/db.js";
 import jwt from "jsonwebtoken";
 
+
+
+export const getProfile = async (req, res) => {
+
+try {
+
+const userId = req.user.user_id;
+
+const [userRows] = await db.execute(
+"SELECT full_name, email, phone FROM users WHERE user_id = ?",
+[userId]
+);
+
+const [walletRows] = await db.execute(
+"SELECT wallet_id, balance FROM wallets WHERE user_id = ?",
+[userId]
+);
+
+const walletId = walletRows[0].wallet_id;
+
+const [txnRows] = await db.execute(
+"SELECT COUNT(*) AS totalTransactions FROM transactions WHERE sender_wallet = ? OR receiver_wallet = ?",
+[walletId, walletId]
+);
+
+res.json({
+full_name: userRows[0].full_name,
+email: userRows[0].email,
+phone: userRows[0].phone,
+wallet_id: walletRows[0].wallet_id,
+balance: walletRows[0].balance,
+totalTransactions: txnRows[0].totalTransactions
+});
+
+} catch (error) {
+
+console.log(error);
+res.status(500).json({ error: error.message });
+
+}
+
+};
 export const registerUser = async (req, res) => {
+
+
+console.log("REGISTER API HIT");
+console.log(req.body);
+
     try {
         const { full_name, email, phone, password } = req.body;
 

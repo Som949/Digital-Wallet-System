@@ -1,0 +1,81 @@
+.transactions-container{
+width:80%;
+margin:60px auto;
+text-align:center;
+}
+
+.transactions-container h2{
+margin-bottom:20px;
+}
+.transactions-page{
+
+min-height:100vh;
+
+background:linear-gradient(
+to right,
+#c8d6e5,
+#e6ecf5
+);
+
+padding-top:40px;
+
+}
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+th,td{
+padding:12px;
+border:1px solid #ddd;
+}
+
+th{
+background:#333;
+color:white;
+}
+
+tr:nth-child(even){
+background:#f2f2f2;
+}
+
+.back-btn{
+margin:20px;
+padding:10px 20px;
+background:#2196F3;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.debit{
+color:red;
+font-weight:bold;
+}
+
+.credit{
+color:green;
+font-weight:bold;
+}
+
+.filter-box{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+.filter-box input{
+padding:8px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+.filter-box select{
+padding:8px;
+border-radius:5px;
+border:1px solid #ccc;
+}

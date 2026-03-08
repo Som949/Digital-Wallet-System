@@ -147,7 +147,7 @@ export const withdrawMoney = async (req, res) => {
 
 //transfer
 export const transferMoney = async (req, res) => {
-  const connection = await db.getConnection();
+  const connection = await db.getConnection(w);
 
   try {
     const senderId = req.user.user_id;

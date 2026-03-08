@@ -1,0 +1,88 @@
+/* full page */
+
+.transfer-container{
+
+height:100vh;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+background:url("../assets/images/login-bg.jpg") no-repeat center center;
+background-size:cover;
+
+overflow:hidden;
+}
+
+/* card */
+
+.transfer-container form{
+
+width:350px;
+
+background:white;
+
+padding:30px;
+
+border-radius:12px;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+
+text-align:center;
+}
+
+/* title */
+
+.transfer-container h2{
+
+margin-bottom:20px;
+
+}
+
+/* inputs */
+
+.transfer-container input{
+
+width:100%;
+
+padding:10px;
+
+margin:10px 0;
+
+border-radius:8px;
+
+border:1px solid #ccc;
+
+}
+
+/* button */
+
+.transfer-container button{
+
+width:100%;
+
+padding:12px;
+
+margin-top:10px;
+
+background:#2f66b3;
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.transfer-container button:hover{
+
+background:#1c4f8d;
+
+}
