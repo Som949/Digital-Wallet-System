@@ -147,9 +147,11 @@ export const withdrawMoney = async (req, res) => {
 
 //transfer
 export const transferMoney = async (req, res) => {
-  const connection = await db.getConnection(w);
+
+  const connection = await db.getConnection(); // ❌ w hata diya
 
   try {
+
     const senderId = req.user.user_id;
     const { receiverEmail, amount } = req.body;
 
@@ -176,7 +178,7 @@ export const transferMoney = async (req, res) => {
       throw new Error("Insufficient balance");
     }
 
-    // 2️⃣ Get receiver user
+    // 2️⃣ Get receiver user by email
     const [userRows] = await connection.execute(
       "SELECT user_id FROM users WHERE email = ?",
       [receiverEmail]
@@ -197,6 +199,10 @@ export const transferMoney = async (req, res) => {
       "SELECT wallet_id FROM wallets WHERE user_id = ? FOR UPDATE",
       [receiverId]
     );
+
+    if (receiverRows.length === 0) {
+      throw new Error("Receiver wallet not found");
+    }
 
     const receiverWallet = receiverRows[0].wallet_id;
 
@@ -225,13 +231,19 @@ export const transferMoney = async (req, res) => {
     res.json({ message: "Transfer successful" });
 
   } catch (error) {
-    await connection.rollback();
-    res.status(400).json({ message: error.message });
-  } finally {
-    connection.release();
-  }
-};
 
+    await connection.rollback();
+    console.log(error);
+
+    res.status(400).json({ message: error.message });
+
+  } finally {
+
+    connection.release();
+
+  }
+
+};
 //all transaction history
 export const getTransactions = async (req, res) => {
   try {
