@@ -29,9 +29,8 @@ Admin users can:
 ## 🛠 Technologies Used
 
 ### 🌐 Frontend
-- HTML5 – Structure of web pages  
-- CSS3 – Styling and layout  
-- Bootstrap – Responsive design  
+- React.js to build Component
+- Material ui use to take icones
 - JavaScript (Fetch API) – Client-side validation and API calls  
 
 ### 🖥 Backend
